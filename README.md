@@ -1,5 +1,5 @@
-# LaravelWorkshop
-Small workshop demonstrating Laravel 5.5 features.
+# Laravel Workshop
+A workshop that demonstrates Laravel 5.5 features.
 
 ## Setup:
 Install Laravel homestead: https://laravel.com/docs/5.5/homestead
