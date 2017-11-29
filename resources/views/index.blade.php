@@ -66,7 +66,7 @@
                                 </div>
                             <div class="form-group">
                                 <div class="controls col-md-8 ">
-                                    <input type="submit" name="Submit" value="Submit" class="btn btn-primary btn btn-info" id="submit-id">
+                                    <input type="submit" name="Submit" dusk="submit" value="Submit" class="btn btn-primary btn btn-info" id="submit-id">
                                 </div>
                             </div>
                         </form>

@@ -2,9 +2,8 @@
 
 namespace Tests\Browser;
 
-use Tests\DuskTestCase;
 use Laravel\Dusk\Browser;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Tests\DuskTestCase;
 
 class ExampleTest extends DuskTestCase
 {
@@ -17,7 +16,11 @@ class ExampleTest extends DuskTestCase
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
-                    ->assertSee('Laravel');
+                ->radio('1', 1)
+                ->radio('2', 5)
+                ->radio('4', 10)
+                ->radio('6', 13)
+                ->click("@submit");
         });
     }
 }

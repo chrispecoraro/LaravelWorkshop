@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Answer;
 use App\User;
 use Illuminate\Support\Facades\Input;
 
@@ -19,5 +20,11 @@ class HealthTestController extends Controller
         $user->password = bcrypt($email);
         $user->save();
         $user->answers()->sync($values);
+
+        $score = Answer::join('answer_user', 'answer_user.answer_id', '=', 'answers.id')
+            ->where('user_id', $user->id)->sum('point_value');
+
+        return view('results', ['score' => $score]);
+
     }
 }
