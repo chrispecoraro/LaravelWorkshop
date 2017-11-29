@@ -8,8 +8,9 @@ class Answer extends Model
 {
     public $guarded = [];
 
-    public function users(){
-        $this->belongsToMany(User::class);
+    public function users()
+    {
+        return $this->belongsToMany(User::class);
     }
 
 }
