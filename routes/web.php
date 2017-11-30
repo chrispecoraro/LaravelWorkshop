@@ -14,6 +14,17 @@
 Route::get('/', function () {
     return view('index');
 });
+
+
+
+Route::get('/report', function () {
+    return \App\Question::with(['answers.users'=>function($query){
+        $query->where('users.id',3);
+    }])->get();
+
+});
+
+
 Route::post('/', 'HealthTestController@create');
 
 Auth::routes();
