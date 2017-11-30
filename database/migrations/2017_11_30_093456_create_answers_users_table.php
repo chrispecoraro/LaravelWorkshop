@@ -14,9 +14,7 @@ class CreateAnswersUsersTable extends Migration
     public function up()
     {
         Schema::create('answers_users', function (Blueprint $table) {
-            $table->tinyIncrements('id');
-            $table->unsignedMediumInteger('user_id');
-            $table->unsignedTinyInteger('answer_id');
+            $table->increments('id');
             $table->timestamps();
         });
     }
