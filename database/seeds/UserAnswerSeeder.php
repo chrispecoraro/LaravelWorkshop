@@ -19,12 +19,12 @@ class UserAnswerSeeder extends Seeder
                 $questions->each(function($question) use ($user){
                     $question->load('answers');
 
-                    $answers_array = $question->answers->toArray();
+                    $answer = $question->answers->random();
 
-                    $answers_array_key = array_rand($answers_array);
-                    $answer = $answers_array[$answers_array_key];
+//                    $answers_array_key = array_rand($answers_array);
+//                    $answer = $answers_array[$answers_array_key];
 
-                    AnswerUser::create(['user_id'=>$user->id,'answer_id'=> $answer['id']]);
+                    AnswerUser::create(['user_id'=>$user->id,'answer_id'=> $answer->id]);
                 });
             });
     }

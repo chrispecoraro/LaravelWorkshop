@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAnswerUserTable extends Migration
+class CreateCitiesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,8 @@ class CreateAnswerUserTable extends Migration
      */
     public function up()
     {
-        Schema::create('answer_user', function (Blueprint $table) {
+        Schema::create('cities', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedMediumInteger('user_id');
-            $table->unsignedTinyInteger('answer_id');
             $table->timestamps();
         });
     }
@@ -28,6 +26,6 @@ class CreateAnswerUserTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('answers_users');
+        Schema::dropIfExists('cities');
     }
 }
