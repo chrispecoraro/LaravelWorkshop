@@ -15,6 +15,13 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::get('/answers', function () {
+    return \App\Answer::all();
+});
+
+Route::resource('answers', 'AnswersController');
+
+Route::resource('questions', 'QuestionsController');
 
 
 Route::get('/report', function () {
