@@ -10,6 +10,8 @@ class HealthTestController extends Controller
 {
     public function create()
     {
+        $inputs = Input::all();
+
         $inputs = Input::except('_token', 'Submit', 'email');
         $values = array_values($inputs);
         $user = new User();
